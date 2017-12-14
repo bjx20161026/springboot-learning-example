@@ -15,11 +15,11 @@ import org.springframework.stereotype.Service;
  *
  * Created by bysocket on 07/02/2017.
  */
-@Service
+
 public class CityServiceImpl implements CityService,InitializingBean {
 
-    @Autowired
-    private CityDao cityDao;
+//    @Autowired
+//    private CityDao cityDao;
     
     @Autowired
 	private SqlSessionFactory sqlSessionFactory;
@@ -31,7 +31,8 @@ public class CityServiceImpl implements CityService,InitializingBean {
     }
 
     public City findCityByName(String cityName) {
-        return cityDao.findByName(cityName);
+		return null;
+//        return cityDao.findByName(cityName);
     }
 
 	@Override

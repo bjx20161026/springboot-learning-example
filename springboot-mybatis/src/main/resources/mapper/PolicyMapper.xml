@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.spring.springboot.dao.PolicyDao">
+	<select id="findById" resultType="java.util.HashMap" parameterType="map">
+		select id,type from dm_co_ba_cfg_clt where id = #{map.id,jdbcType=VARCHAR}
+	</select>
+</mapper>

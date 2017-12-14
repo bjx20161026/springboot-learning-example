@@ -20,20 +20,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CityRestController {
 
-    @Autowired
-    private CityService cityService;
+
     
     @Autowired
     private PolicyDao policyDao;
 
-    @RequestMapping(value = "/api/city", method = RequestMethod.GET)
-    public City findOneCity(@RequestParam(value = "cityName", required = true) String cityName) {
-        return cityService.findCityByName(cityName);
-    }
-     
+
     @RequestMapping(value = "/api/test", method = RequestMethod.GET)
     public List<Map<String,Object>> getTestString() {
-    	return policyDao.findById("FTP-EXAMPLE");
+    	HashMap<String, Object> map = new HashMap<String, Object>();
+    	map.put("id", "FTP_Huawu_SPEECH");
+    	return policyDao.findById(map);
     }
     
     @RequestMapping(value = "/api/map", method = RequestMethod.GET)
